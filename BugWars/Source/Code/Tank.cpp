@@ -3,12 +3,24 @@
 #include "Globals.h"
 #include "Game.h"
 #include "Bullet.h"
+#include "Bug.h"
+
+IMPLEMENT_RTTI(Tank);
 
 void Tank::OnUpdate(float dt)
 {
 }
 
-Point Tank::CalcShootDirection() const
+BugBase* Tank::GetBugToShoot() const
 {
-	return Point{ 1, 0 };
+	for (auto obj : g_Game->objects)
+		if (auto bug = dynamic_cast<Bug*>(obj))
+			return bug;
+
+	return nullptr;
+}
+
+Point Tank::CalcShootDirection(Point target_pos, Point target_dir, float target_vel, float bullet_vel) const
+{
+	return { 1, 0 };
 }

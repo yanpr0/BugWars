@@ -20,10 +20,10 @@ void BugBase::Update(float dt)
 	if (len2 < _2r2)
 		OnEat(*this, *target);
 
-	auto dir = vec.Normalized();
-	position = position + dir * s_Velocity * dt;
-	if (dir.x != 0.0f)
-		angle = 90.0f + atan2(dir.y, dir.x) * 180.0f / std::numbers::pi_v<float>;
+	direction = vec.Normalized();
+	position = position + direction * s_Velocity * dt;
+	if (direction.x != 0.0f)
+		angle = 90.0f + atan2(direction.y, direction.x) * 180.0f / std::numbers::pi_v<float>;
 }
 
 Texture* BugBase::GetTexture() const

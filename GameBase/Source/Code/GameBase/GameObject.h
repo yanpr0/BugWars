@@ -1,9 +1,10 @@
 #pragma once
+#include "RTTIObject.h"
 #include "Point.h"
 
 struct Texture;
 
-struct GameObject
+struct GameObject : public RTTIObject
 {
 	GameObject();
 	virtual ~GameObject() = default;

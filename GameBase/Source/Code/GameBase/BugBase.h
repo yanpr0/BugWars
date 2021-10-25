@@ -14,4 +14,6 @@ struct BugBase : public GameObject
 	virtual void OnEat(BugBase& first, BugBase& second) = 0;
 	
 	static const float s_Velocity;
+
+	Point direction;
 };

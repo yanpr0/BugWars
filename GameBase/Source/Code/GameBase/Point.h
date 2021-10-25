@@ -14,6 +14,11 @@ struct Point
 		, y((float)y_)
 	{}
 
+	Point(double x_, double y_)
+		: x((float)x_)
+		, y((float)y_)
+	{}
+
 	Point operator + (Point other) const
 	{
 		return Point(x + other.x, y + other.y);
@@ -52,6 +57,16 @@ struct Point
 	float Distance(Point p) const
 	{
 		return (p - *this).Length();
+	}
+
+	float Distance2(Point p) const
+	{
+		return (p - *this).Length2();
+	}
+
+	float Dot(Point p) const
+	{
+		return x * p.x + y * p.y;
 	}
 
 	float x = 0.0f;

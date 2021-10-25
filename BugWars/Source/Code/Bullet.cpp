@@ -4,6 +4,8 @@
 #include "Bug.h"
 #include "Tank.h"
 
+IMPLEMENT_RTTI(Bullet);
+
 void Bullet::OnStart(Point)
 {
 }

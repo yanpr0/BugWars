@@ -120,6 +120,7 @@
     <ClInclude Include="Source\Code\GameBase\Memory.h" />
     <ClInclude Include="Source\Code\GameBase\pch.h" />
     <ClInclude Include="Source\Code\GameBase\Point.h" />
+    <ClInclude Include="Source\Code\GameBase\RTTIObject.h" />
     <ClInclude Include="Source\Code\GameBase\TankBase.h" />
     <ClInclude Include="Source\Code\GameBase\Texture.h" />
   </ItemGroup>

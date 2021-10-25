@@ -2,6 +2,8 @@
 #include "Bug.h"
 #include "Game.h"
 
+IMPLEMENT_RTTI(Bug);
+
 void Bug::OnUpdate(float dt)
 {
 }

@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "TankBase.h"
 #include "BulletBase.h"
+#include "BugBase.h"
 #include "Globals.h"
 #include "GameBase.h"
 
@@ -37,9 +38,14 @@ void TankBase::Update(float dt)
 
 void TankBase::Shoot()
 {
+	auto bug = GetBugToShoot();
+	if (!bug)
+		return;
+
 	auto bullet = g_GameBase->creators.bullet_creator();
 	g_GameBase->AddObject(bullet);
-	bullet->Start(CalcShootDirection());
+
+	bullet->Start(CalcShootDirection(bug->position, bug->direction, BugBase::s_Velocity, BulletBase::s_Velocity));
 	numShots++;
 }
 
