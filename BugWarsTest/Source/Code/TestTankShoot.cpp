@@ -83,21 +83,21 @@ TEST(TankShoot_7)
 	CHECK_EQUAL(true, WillHitTarget({ 5, -5 }, { 0, 0 }, { 1, 1 }, 1.5f, 1.8f));
 }
 
-TEST(TankShoot_9)
+TEST(TankShoot_8)
 {
 	//   b-   t  
 	CHECK_EQUAL(true, WillHitTarget({ 0, 0 }, { -10, 0 }, { 1, 0 }, 0.001f, 1.0f));
 }
 
-TEST(TankShoot_10)
+TEST(TankShoot_9)
 {
 	//        t  
 	//        |  
 	//        b  
-	CHECK_EQUAL(true, WillHitTarget({ 0, 0 }, { 0, 10 }, { 0, -1 }, 10.0f, 0.0001f));
+	CHECK_EQUAL(true, WillHitTarget({ 0, 0 }, { 0, 10 }, { 0, -1 }, 10.0f, 0.01f));
 }
 
-TEST(TankShoot_11)
+TEST(TankShoot_10)
 {
 	//        t  
 	//          
