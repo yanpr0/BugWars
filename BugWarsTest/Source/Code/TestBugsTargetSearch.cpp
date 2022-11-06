@@ -30,7 +30,6 @@ TEST(ChunkBordersCrossedOnUpdate)
 
 	auto bug_1st_target = new Bug;
 	bug_1st_target->position = Point(max_corner - 500.0f, min_corner); // top right corner, the closest target initially
-	game.AddObject(bug_1st_target);
 
 	// A target for reverse iteration update
 	auto bug_1st_target_r = new Bug;
@@ -38,13 +37,17 @@ TEST(ChunkBordersCrossedOnUpdate)
 
 	auto bug_2nd_target = new Bug;
 	bug_2nd_target->position = Point(min_corner, max_corner - 100.0f); // bottom left corner, a bit further from the hunter bug
-	game.AddObject(bug_2nd_target);
 
+	// A target for reverse iteration update
 	auto bug_2nd_target_r = new Bug;
 	bug_2nd_target_r->position = Point(min_corner, max_corner - 200.0f); // bottom left corner, a bit further from the hunter bug
 
 	auto bug_hunter = new Bug; // very hungry
 	bug_hunter->position = Point(min_corner, min_corner);
+
+	game.AddObject(bug_1st_target);
+	game.AddObject(bug_2nd_target);
+
 	game.AddObject(bug_hunter);
 
 	game.AddObject(bug_1st_target_r);
