@@ -16,3 +16,4 @@ struct Game : public GameBase
 
 	std::vector<GameObject*> objects;
 };
+

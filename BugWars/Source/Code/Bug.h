@@ -9,3 +9,4 @@ struct Bug : public BugBase
 	virtual BugBase* FindBugToEat() const override;
 	virtual void OnEat(BugBase& first, BugBase& second) override;
 };
+

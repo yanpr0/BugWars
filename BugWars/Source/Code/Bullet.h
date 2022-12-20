@@ -9,3 +9,4 @@ struct Bullet : public BulletBase
 	virtual void OnUpdate(float dt) override;
 	virtual void OnLifeEnd() override;
 };
+

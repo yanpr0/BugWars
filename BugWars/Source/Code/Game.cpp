@@ -40,3 +40,4 @@ void Game::AddObject(GameObject* object)
 void Game::OnBugsSpawned()
 {
 }
+

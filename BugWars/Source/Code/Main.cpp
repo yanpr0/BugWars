@@ -20,3 +20,4 @@ int main(int argc, const char* argv[])
 	LogZA("Allocated memory: %zu", g_AllocatedMemory);
 	return 0;
 }
+
