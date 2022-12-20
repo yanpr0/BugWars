@@ -6,6 +6,12 @@
 
 IMPLEMENT_RTTI(Bullet);
 
+Bullet::Bullet()
+{
+	disabled = false;
+	angle = 0;
+}
+
 void Bullet::OnStart(Point)
 {
 }

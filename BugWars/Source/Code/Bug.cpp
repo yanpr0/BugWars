@@ -4,6 +4,12 @@
 
 IMPLEMENT_RTTI(Bug);
 
+Bug::Bug()
+{
+	disabled = false;
+	angle = 0;
+}
+
 void Bug::OnUpdate(float dt)
 {
 }

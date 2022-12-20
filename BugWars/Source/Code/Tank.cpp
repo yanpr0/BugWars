@@ -11,6 +11,12 @@
 
 IMPLEMENT_RTTI(Tank);
 
+Tank::Tank()
+{
+	disabled = false;
+	angle = 0;
+}
+
 void Tank::OnUpdate(float dt)
 {
 }
@@ -21,9 +27,9 @@ BugBase* Tank::GetBugToShoot() const
     float min_d = std::numeric_limits<float>::max();
 
 	for (auto obj : g_Game->objects)
-		if (obj->GetRTTI() == Bug::s_RTTI)
+		if (obj->GetRTTI() == Bug::s_RTTI && !obj->disabled)
         {
-            if (auto d = position.Distance(obj->position); d < min_d)
+            if (auto d = position.Distance2(obj->position); d < min_d)
             {
                 bug = static_cast<Bug*>(obj);
 			    min_d = d;
@@ -75,7 +81,14 @@ Point Tank::CalcShootDirection(Point target_pos, Point target_dir, float target_
             return {};
         }
 
-        return {Point{vel_x, sqrt(vel_y_2)}.Normalized(), t};
+        auto vel_y = sqrt(vel_y_2);
+
+        if (abs(t * (vel_y - vy) - dy) > 1e-4)
+        {
+            vel_y = -vel_y;
+        }
+
+        return { {Point{vel_x, vel_y}.Normalized(), t} };
     };
 
     auto ans1 = get_dir_time(sqrt_D_);
